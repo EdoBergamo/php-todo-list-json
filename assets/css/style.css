@@ -23,16 +23,43 @@ input {
   margin-bottom: 12px;
 }
 
-button {
-  width: 100%;
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
   padding: 8px;
-  background-color: #4caf50;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #808080;
+}
+
+button {
+  background-color: #f44336;
   color: #fff;
   border: none;
+  padding: 6px 12px;
   border-radius: 4px;
   cursor: pointer;
 }
 
+.green-btn {
+  background-color: #039f03;
+}
+
 button:hover {
-  background-color: #45a049;
+  background-color: #d32f2f;
 }

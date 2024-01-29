@@ -26,7 +26,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   echo json_encode($newTask);
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
+  $data = json_decode(file_get_contents('php://input'), true);
+  $taskId = $_GET['id'];
+  $tasks = readTasks();
+
+  foreach ($tasks as &$task) {
+    if ($task['id'] === $taskId) {
+      $task['completed'] = isset($data['completed']) ? filter_var($data['completed'], FILTER_VALIDATE_BOOLEAN) : $task['completed'];
+      break;
+    }
+  }
+
+  writeTasks($tasks);
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   $tasks = readTasks();
   echo json_encode($tasks);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
+  $taskId = $_GET['id'];
+  $tasks = readTasks();
+  $tasks = array_filter($tasks, function ($task) use ($taskId) {
+    return $task['id'] !== $taskId;
+  });
+  writeTasks($tasks);
 }

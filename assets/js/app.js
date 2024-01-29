@@ -17,6 +17,14 @@ createApp({
       const response = await axios.get('server.php');
       this.tasks = response.data;
     },
+    async toggleTask(task) {
+      task.completed = !task.completed;
+      await axios.put(`server.php?id=${task.id}`, { completed: task.completed });
+    },
+    async deleteTask(task) {
+      await axios.delete(`server.php?id=${task.id}`);
+      this.tasks = this.tasks.filter(t => t.id !== task.id);
+    }
   },
   mounted() {
     this.fetchTasks();
