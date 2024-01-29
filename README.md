@@ -6,11 +6,10 @@ nome repo: `php-todo-list-json`
 Dobbiamo creare una web-app che permetta di leggere e scrivere una lista di Todo.
 Deve essere anche gestita la persistenza dei dati leggendoli da, e scrivendoli in un file JSON.
 
-##### Stack
-`Html`, `CSS`, `VueJS` (importato tramite CDN), `axios`, `PHP`
+#### Stack
+Html, CSS, VueJS (importato tramite CDN), axios, PHP
 
-
-#### Consigli
+### Consigli
 Nello svolgere l’esercizio seguite un approccio graduale.
 Prima assicuratevi che la vostra pagina index.php (il vostro front-end) riesca a comunicare correttamente con il vostro script PHP (le vostre “API”).
 Lo step successivo è quello di “testare" l'invio di un nuovo task, sapendo che manca comunque la persistenza lato server (ancora non memorizzate i dati da nessuna parte).
@@ -20,5 +19,4 @@ Mostrare lo stato del task → se completato, barrare il testo
 Permettere di segnare un task come completato facendo click sul testo
 Permettere il toggle del task (completato/non completato)
 Abilitare l’eliminazione di un task
-Aggiungere la possibilità di aggiungere un task
-Buon pranzo e buon lavoro!
+Buon pranzo e buon lavoro! 
